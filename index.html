@@ -1,0 +1,72 @@
+{% extends 'base.html'%}
+
+{% block content %}
+    
+<h2>Sobre</h2>
+<p>CFC Estrela Guia é uma auto escola com 18 anos de experiência no mercado de formação de condutores, é 
+credenciada pelo Detran-SP, conta com instrutores especializados, veículos modernos e adaptados para ensinar todos os
+passos necessários para aprovação nas provas e realiza o curso teórico que é importantíssimo para compreender o funcionamento do trânsito<br>
+</p>
+<h4>Horário de Atendimento</h4>
+<p>
+    De segunda à sexta-feira das 8:00 às 12:00 e 14:00 às 18:00
+</p>
+
+<h4>Localização</h4>
+<p>Rua Joaquim Ribeiro da Silva, 1364 - Centro, Cesário Lange - SP, 18285-000</p>
+
+<h4>Telefone</h4>
+<p>     
+(15) 99792-7810 <br>
+</p>
+<h4>Horário do Curso Teórico</h4>
+<p>
+    manhã 7:30 às 11:40<br>
+    noturno 18:30 às 22:40
+</p>
+
+<h4>Preços 2023</h4>
+<p>Exame médico  R$ 113,00<br>
+Psicotécnico  R$ 132,00<br>
+Taxa R$ 125,00<br>
+Transferência R$ 200,00<br>
+Reprova R$ 220,00<br>
+Aula extra cat.A (moto) R$ 80,00<br>
+Aula extra cat.B (carro) R$ 100,00<br>
+Obs: O exame Médico e o Psicotécnico NÃO são cobrados pela auto escola</p>
+
+<h4>Formas de Pagamentos</h4> 
+<p>Trabalhamos com o carnê, dinheiro, pix e com o cartão de crédito podendo ser
+parcelado em até 18x repassando o acréscimo da maquininha<br>
+Temos descontos para pagamentos á vista
+</p>
+
+<h4>Documentos necessário para realizar a inscrição</h4>
+<h6>RG, CPF, Comprovante de Endereço e um Email </h6><br><br>
+
+<h4>Selecione o serviço:</h4><br>
+
+<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+<option selected>Selecione os serviço:</option><br>
+<option value="1">Primeira Habilitação categoria AB (Moto e Carro)  6X de R$430,00</option>
+<option value="2">Primeira Habilitação categoria A (Moto)  4X de R$380,00</option>
+<option value="3">Primeira Habilitação categoria B (Carro)  4X de R$440,00</option>
+<option value="4">Adição categoria A(Moto)  3X de R$400,00</option>
+<option value="5">Adição categoria B(Carro) 4X de R$360,00</option>
+</select><br><br>
+
+Obs:Valor contempla 20 aulas práticas obrigatórias para cada categoria podendo ser contratada aulas extras cujo valor
+está na primeira tabela<br><br>
+
+    <h1>{% block title %} Clientes {% endblock %}</h1>
+    {% for post in posts %}
+        <a href="{{ url_for('post', post_id=post['id'])}}">
+            <h2>{{ post['title'] }}</h2>
+        </a>
+        <span class="badge badge-primary">{{ post['created'] }}</span>
+        <a href="{{ url_for('edit', id=post['id']) }}">
+            <span class="badge badge-warning">Editar</span>
+        </a>
+        <hr>
+    {% endfor %}
+{% endblock %}
